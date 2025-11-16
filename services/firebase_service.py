@@ -3,7 +3,7 @@ from firebase_admin import credentials, firestore, auth, storage
 
 cred = credentials.Certificate("firebase_config.json")
 firebase_admin.initialize_app(cred, {
-    'storageBucket': '<your-firebase-bucket>.appspot.com'
+    'storageBucket': 'remedi_bucket1.appspot.com'
 })
 
 db = firestore.client()
