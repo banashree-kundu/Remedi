@@ -104,7 +104,7 @@ class PrescriptionOCR:
 
 if __name__ == "__main__":
     # Replace with your actual key
-    API_KEY = "AIzaSyAUYtuHR00wdA6bbuJOIcwYxj2LyJFh2Cw"
+    API_KEY = ""
 
     # Initialize once (e.g., in your app startup)
     ocr = PrescriptionOCR(API_KEY)
