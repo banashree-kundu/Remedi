@@ -37,10 +37,10 @@
 | **Backend** | Flask (Python) |
 | **Database** | Firebase Firestore |
 | **Authentication** | Firebase Auth |
-| **Storage** | Firebase Storage (for prescription uploads) |
+| **Storage** | ImagekitIo (for prescription uploads) |
 | **Scheduler** | APScheduler |
 | **PDF Export** | FPDF / ReportLab |
-| **OCR (optional)** | pytesseract |
+| **OCR (optional)** | Gemini 2.5 flash API |
 
 ---
 
@@ -56,10 +56,10 @@ Remedi/
 │
 ├── templates/                 # HTML templates
 │   ├── base.html
+│   ├── home.html
 │   ├── dashboard.html
 │   ├── add_medicine.html
-│   ├── login.html
-│   ├── register.html
+│   ├── getstarted.html
 │   └── hydration.html (optional)
 │
 ├── static/                    # CSS, JS, and images
@@ -71,6 +71,7 @@ Remedi/
 ├── firebase_service.py    # Firestore CRUD helpers
 ├── scheduler_service.py   # Reminder + notification handling
 └── pdf_exporter.py        # PDF generation logic
+└── ocr.py                 # api calls and ocr output
 
 ````
 
@@ -91,8 +92,8 @@ Remedi/
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/HealthEase.git
-   cd HealthEase
+   git clone https://github.com/mrinmoyChakraborty-mrinox/Remedi.git
+   cd Remedi
    ```
 
 2. **Create a virtual environment**

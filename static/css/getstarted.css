@@ -1,0 +1,164 @@
+:root {
+  --bg: #f4faff;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --accent: #38bdf8; /* sky blue */
+  --accent-light: #e0f6ff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.getstartedbody {
+  margin: 0;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getstartedbody .card {
+  width: min(400px, 92vw);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e6eef6;
+}
+
+.getstartedbody h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #0b3558;
+}
+
+.getstartedbody .lead {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.getstartedbody .toggle {
+  display: flex;
+  background: var(--accent-light);
+  border-radius: 999px;
+  padding: 5px;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.getstartedbody .toggle button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.getstartedbody .toggle button.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 6px rgba(56, 189, 248, 0.3);
+}
+
+.getstartedbody form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.getstartedbody label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.getstartedbody input {
+  background: #f9fcff;
+  border: 1px solid #cce6f9;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--text);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.getstartedbody input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.getstartedbody .btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+.getstartedbody #google-login-btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+.getstartedbody .btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--accent);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+.getstartedbody .btn-outline:hover {
+  background: var(--accent);
+  color: white;
+}
+.getstartedbody .btn-outline:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.getstartedbody .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+.getstartedbody .btn-outline:hover {
+  background: #0ea5e9;
+  color: white;
+}
+.getstartedbody #google-login-btn:hover {
+  background: #0ea5e9;
+}
+.getstartedbody .btn:hover {
+  background: #0ea5e9;
+}
+.getstartedbody #phone-login-btn {
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+.getstartedbody #phone-login-btn:hover {
+  background: #0ea5e9;
+}

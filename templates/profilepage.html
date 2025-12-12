@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Profile</title>
+<link rel="stylesheet" href="/static/css/profilepage.css">
+
+
+<div class="container">
+
+    <!-- Back Arrow -->
+    <div class="back" onclick="window.history.back()"> <span>&larr;</span>
+    </div>
+    <div class="profile-photo">
+        <div class="circle" id="profile-circle"
+             style="background-image: url('https://ik.imagekit.io/RemediRX/pngwing.com.png'); background-size: cover; background-position: center;">
+        </div>
+    
+    
+        <div id="createprofile" style="display: none;">
+        <!-- Title -->
+        <h2 class="title">Create Profile</h2>
+
+        <!-- Profile Image -->
+        <div class="profile-photo">
+            <p class="tap-text">Tap to add a profile picture</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+            
+            <button class="upload-btn">Upload Photo</button>
+        </div>
+    </div>
+    <!-- Form -->
+    <form id="info-form" style="display: none;">
+        <label>*Full Name</label>
+        <input type="text" placeholder="">
+
+        <label>Age</label>
+        <input type="number" placeholder="">
+
+        <label>Gender</label>
+        <select>
+            <option value="">Select</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="others">others</option>
+        </select>
+
+        <label>Emergency Contact Number</label>
+        <input type="text" placeholder="">
+    </form>
+
+    <!-- Footer Buttons -->
+    <div class="bottom-row">
+        <button class="delete">Delete</button>
+        <button class="update">Update</button>
+    </div>
+
+</div>
+{% endblock %}

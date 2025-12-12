@@ -244,48 +244,215 @@ footer {
     margin-top: 30px;
   }
 }
+/* Global mobile tweaks */
+@media (max-width: 768px) {
+  .navbar .container {
+    width: 94%;
+    padding: 10px 0;
+  }
 
+  nav ul {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
 
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 6%;
+  }
 
-.instruction{margin:12px 0 20px;color:var(--muted)}
+  .hero-buttons {
+    justify-content: center;
+  }
 
-.grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+  .hero-image img {
+    width: 80%;
+    max-width: 320px;
+    margin-top: 20px;
+  }
+}
+/* =========================================
+   About Us (Student Edition) Specific CSS
+   ========================================= */
 
-/* Left column */
-.list{display:flex;flex-direction:column;gap:12px}
-.card{background:var(--card);border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.04);display:flex;overflow:hidden}
-.accent{width:6px}
-.card-main{flex:1;padding:14px}
-.card-head{display:flex;align-items:center;justify-content:space-between}
-.med-title{display:flex;gap:12px;align-items:center}
-.dot{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:2px solid rgba(0,0,0,0.06)}
-.name{font-weight:700;font-size:16px}
-.sub{color:var(--muted);font-size:13px}
-.toggle-btn{background:none;border:0;font-size:18px;cursor:pointer;padding:6px}
-.actions{display:flex;gap:8px;align-items:center}
-.btn{border:1px solid #e6e9ef;background:#fff;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:13px}
-.btn.danger{border-color:var(--danger);color:var(--danger)}
+/* Section Wrapper */
+.about-section {
+  padding: 80px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: transparent; /* Inherits body bg */
+}
 
-.summary{margin-top:10px;color:var(--muted);font-size:13px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.chip{background:#f3f4f6;padding:6px 10px;border-radius:999px;font-size:13px}
-.tiny{font-size:12px;color:var(--muted)}
+/* Header Styles */
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeUp 0.8s ease-out;
+}
 
-/* Collapsed state */
-.collapsed .card-main{padding:12px}
-.collapsed .card-body{display:none}
+.student-badge {
+  display: inline-block;
+  background: #e6f7ff;
+  color: #007acc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  border: 1px solid #b3e0ff;
+}
 
-/* Right column */
-.panel{position:sticky;top:20px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
-.panel h4{margin:0 0 8px 0}
-.stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eef2f7;color:var(--muted)}
-.chart-wrap{display:flex;justify-content:center;align-items:center;padding:14px}
-.cta{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-.primary{background:linear-gradient(90deg,#2563eb,#7c3aed);color:#fff;border:0;padding:10px;border-radius:8px;cursor:pointer}
-.secondary{background:#fff;border:1px solid #e6e9ef;padding:8px;border-radius:8px;cursor:pointer}
+.about-header h1 {
+  font-size: 3rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-.error{background:rgba(239,68,68,0.06);color:var(--danger);padding:8px;border-radius:6px;margin-top:8px}
-.success{background:rgba(16,185,129,0.06);color:var(--success);padding:8px;border-radius:6px;margin-top:8px}
+.about-header .subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
 
-/* Responsive */
-@media (max-width:900px){.grid{grid-template-columns:1fr}.panel{position:static;margin-top:12px}}
+/* Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Text is slightly wider than card */
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Text Section */
+.about-text h3 {
+  font-size: 1.8rem;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: #222;
+  font-weight: 600;
+}
+
+/* Developer Card (Right Side) */
+.dev-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.1); /* Blue-ish shadow */
+  border: 1px solid #f0f8ff;
+}
+
+.dev-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.card-intro {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Tech List inside Card */
+.tech-list {
+  list-style: none;
+}
+
+.tech-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.tech-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tech-list .icon {
+  font-size: 1.5rem;
+  background: #eef9ff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+.tech-list .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-list .info strong {
+  font-size: 1rem;
+  color: #007acc;
+}
+
+.tech-list .info span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Bottom Team Note */
+.team-note {
+  text-align: center;
+  background: linear-gradient(135deg, #007acc, #00aaff);
+  padding: 50px;
+  border-radius: 20px;
+  color: white;
+}
+
+.team-note p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.signature {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.team-note .btn {
+  background: white;
+  color: #007acc;
+  display: inline-block;
+}
+
+.team-note .btn:hover {
+  background: #f0f8ff;
+  color: #005fa3;
+}
+
+.hello-profile {
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    backdrop-filter: blur(3px);
+}

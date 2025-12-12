@@ -4,21 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReMedi | Wellness Simplified</title>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="icon" href="health.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="/static/images/titleicon.png">
 </head>
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-      <h1 class="logo">Re<span>Medi</span></h1>
+      <h1 class="logo"><a href="/">Re<span>Medi</span></a></h1>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          {% if 'user' in session %}
+          <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="#">Hydration</a></li>
-          
-          <li><a href="#" class="highlight">Get Started</a></li>
+          <li><a href="/logout">Log out</a></li>
+          <li><a href="/profile"><div class="hello-right">
+        <div class="hello-profile" style="background-image: url('{{user.photo_url}}'); background-size: cover; background-position: right;"></div>
+    </div></a></li>
+          {% else %}
+          <li><a href="/getstarted" class="highlight">Get Started</a></li>
+          {% endif %}
         </ul>
       </nav>
     </div>

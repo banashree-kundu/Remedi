@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<title>Profile</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profilepage.css') }}">
+
+<div class="container">
+
+    <!-- Back Arrow -->
+    <div class="back" onclick="window.history.back()"> <span>&larr;</span> </div>
+
+    <!-- 1. HEADER (Profile Pic & Name) -->
+    <div class="profile-photo">
+        <div class="circle" id="profile-circle"
+             style="background-image: url('{{user.photo_url if user.photo_url else 'https://ik.imagekit.io/RemediRX/pngwing.com.png?updatedAt=1764494288724'}}'); background-size: cover; background-position: center;">
+        </div>
+        
+        <!-- Name is always visible at top -->
+        <h2 class="title">{{ user.username if user.username else 'User' }}</h2>
+        
+        <!-- UPLOAD BUTTON (Hidden by default, shown in Edit Mode) -->
+        <div class="btn-row" id="upload-section" style="display: none;">
+            <p class="tap-text">Tap to change photo</p>
+            <button class="upload-btn" id="btn-trigger-upload" type="button">Upload Photo</button>
+        </div>
+    </div>
+
+    <!-- 2. VIEW MODE (Read Only) -->
+    <div id="view-mode" style="display: block; margin-top: 30px;">
+        <div class="info-row">
+            <label>Age:</label> 
+            <strong>{{ user.age if user.age else 'Not set' }}</strong>
+        </div>
+        <br>
+        <div class="info-row">
+            <label>Gender:</label> 
+            <strong>{{ user.gender if user.gender else 'Not set' }}</strong>
+        </div>
+        <br>
+        <div class="info-row">
+            <label>Emergency Contact:</label> 
+            <strong>{{ user.emergency_contact if user.emergency_contact else 'Not set' }}</strong>
+        </div>
+
+        <div class="bottom-row" style="justify-content: center; margin-top: 40px;">
+            <!-- Clicking this hides View Mode and shows Form -->
+            <button class="update" id="btn-enable-edit" style="width: 100%;">Edit Profile</button>
+        </div>
+    </div>
+
+    <!-- 3. EDIT MODE (Form) - Hidden Initially -->
+    <form action="/update_profile" method="POST" enctype="multipart/form-data" id="edit-mode" style="display: none;">
+        
+        <!-- Hidden File Input -->
+        <input type="file" name="profile_pic" id="real-file-input" style="display: none;" accept="image/*">
+
+        <label>Full Name</label>
+        <input type="text" name="username" value="{{ user.username }}">
+
+        <label>Age</label>
+        <input type="number" name="age" value="{{ user.age }}">
+
+        <label>Gender</label>
+        <select name="gender">
+            <option value="male" {% if user.gender == 'male' %}selected{% endif %}>Male</option>
+            <option value="female" {% if user.gender == 'female' %}selected{% endif %}>Female</option>
+            <option value="others" {% if user.gender == 'others' %}selected{% endif %}>Others</option>
+        </select>
+
+        <label>Emergency Contact Number</label>
+        <input type="text" name="emergency_contact" value="{{ user.emergency_contact }}">
+
+        <div class="bottom-row">
+            <button class="delete" id="btn-cancel" type="button">Cancel</button>
+            <button class="update" type="submit">Save Updates</button>
+        </div>
+    </form>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}
